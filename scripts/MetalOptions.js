@@ -1,3 +1,5 @@
+import { setMetalId } from "./TransientState.js"
+
 export const MetalOptions = async () => {
     const response = await fetch("http://localhost:8088/metals")
     const metalOptions = await response.json()
@@ -10,3 +12,12 @@ export const MetalOptions = async () => {
 
     return finalMetalHtml
 }
+
+const changingMetalState = (changeEvent) =>{
+    if(changeEvent.target.name==="metals"){
+        const valueAsInteger = JSON.parse(changeEvent.target.value)
+        setMetalId(valueAsInteger)
+    }
+}
+
+document.addEventListener("change", changingMetalState)
