@@ -1,7 +1,7 @@
 import { MetalOptions } from "./MetalOptions.js";
+import { SaveButton } from "./SaveOrder.js";
 import { SizeOptions } from "./SizeOptions.js";
 import { StyleOptions } from "./StyleOptions.js";
-
 
 const mainContainer = document.querySelector(".container")
 
@@ -9,6 +9,7 @@ const render = async () => {
     const metalHtml = await MetalOptions()
     const styleHtml = await StyleOptions()
     const sizeHtml = await SizeOptions()
+    const buttonHtml = SaveButton()
     const mainHtml = `
         <h1>Kneel Diamonds</h1>
 
@@ -30,7 +31,7 @@ const render = async () => {
         </article>
 
         <article class="order">
-
+                ${buttonHtml}
         </article>
 
         <article class="customOrders">
