@@ -40,4 +40,9 @@ export const placeOrder = async () => {
     // Send the transient state to your API
     const response = await fetch("http://localhost:8088/orders", postOptions)
 
+//creates a custom "noise" for computer to listen for, instead of "click" or "change" computer hears "postingOrder" which you created
+//which tells the computer to RErender in main the HTML
+// this one DOES need to be inside the function because the computer needs to listen and "hear" this custom event when the data gets posted to the api
+    const customEvent = new CustomEvent("postingOrder")
+    document.dispatchEvent(customEvent)
 }
