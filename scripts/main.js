@@ -6,7 +6,7 @@ import { StyleOptions } from "./StyleOptions.js";
 
 const mainContainer = document.querySelector(".container")
 
-const render = async () => {
+export const render = async () => {
     const metalHtml = await MetalOptions()
     const styleHtml = await StyleOptions()
     const sizeHtml = await SizeOptions()

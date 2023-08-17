@@ -12,7 +12,7 @@ export const StyleOptions = async () => {
     return finalStyleHtml
 }
 
-const changingStyleState = (changeEvent) =>{
+export const changingStyleState = (changeEvent) =>{
     if(changeEvent.target.name === "styles"){
         const styleValueAsInt = JSON.parse(changeEvent.target.value)
         setStyleId(styleValueAsInt)

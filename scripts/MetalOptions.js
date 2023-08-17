@@ -13,7 +13,7 @@ export const MetalOptions = async () => {
     return finalMetalHtml
 }
 
-const changingMetalState = (changeEvent) =>{
+export const changingMetalState = (changeEvent) =>{
     if(changeEvent.target.name==="metals"){
         const valueAsInteger = JSON.parse(changeEvent.target.value)
         setMetalId(valueAsInteger)
