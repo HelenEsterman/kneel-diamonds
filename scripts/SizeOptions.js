@@ -13,7 +13,7 @@ export const SizeOptions = async () => {
     return finalSizeHtml
 }
 
-const changingSizeState = (changeEvent) =>{
+export const changingSizeState = (changeEvent) =>{
     if(changeEvent.target.name === "sizes"){
         const sizeValueAsInt = JSON.parse(changeEvent.target.value)
         setSizeId(sizeValueAsInt)
