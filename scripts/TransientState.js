@@ -4,6 +4,7 @@ const transientState = {
   metalId: 0,
   sizeId: 0,
   styleId: 0,
+  typeId: 0,
 };
 
 //setter functions
@@ -22,6 +23,11 @@ export const setStyleId = (styleChosen) => {
   // console.log(transientState)
 };
 
+export const setTypeId = (typeChosen) => {
+  transientState.typeId = typeChosen;
+  console.log(transientState);
+};
+
 //"post" transient state to API to make it permanent state
 
 export const placeOrder = async () => {
@@ -32,7 +38,8 @@ export const placeOrder = async () => {
   if (
     transientState.metalId > 0 &&
     transientState.sizeId > 0 &&
-    transientState.styleId > 0
+    transientState.styleId > 0 &&
+    transientState.typeId > 0
   ) {
     const postOptions = {
       method: "POST",
@@ -47,6 +54,7 @@ export const placeOrder = async () => {
     transientState.metalId = 0;
     transientState.sizeId = 0;
     transientState.styleId = 0;
+    transientState.typeId = 0;
 
     //creates a custom "noise" for computer to listen for, instead of "click" or "change" computer hears "postingOrder" which you created
     //which tells the computer to RErender in main the HTML

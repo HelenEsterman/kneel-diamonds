@@ -3,16 +3,18 @@ import { Orders } from "./OrderList.js";
 import { SaveButton } from "./SaveOrder.js";
 import { SizeOptions } from "./SizeOptions.js";
 import { StyleOptions } from "./StyleOptions.js";
+import { TypeOptions } from "./TypeChoices.js";
 
-const mainContainer = document.querySelector(".container")
+const mainContainer = document.querySelector(".container");
 
 export const render = async () => {
-    const metalHtml = await MetalOptions()
-    const styleHtml = await StyleOptions()
-    const sizeHtml = await SizeOptions()
-    const buttonHtml = SaveButton()
-    const ordersHtml = await Orders()
-    const mainHtml = `
+  const metalHtml = await MetalOptions();
+  const styleHtml = await StyleOptions();
+  const sizeHtml = await SizeOptions();
+  const typesHtml = await TypeOptions();
+  const buttonHtml = SaveButton();
+  const ordersHtml = await Orders();
+  const mainHtml = `
         <h1>Kneel Diamonds</h1>
 
         <article class="choices">
@@ -31,7 +33,9 @@ export const render = async () => {
                 ${styleHtml}
             </section>
         </article>
-
+            <div id="jewelry">
+                ${typesHtml}
+            </div>
         <article class="order">
                 ${buttonHtml}
         </article>
@@ -40,12 +44,12 @@ export const render = async () => {
             <h2>Custom Jewelry Orders</h2>
                 ${ordersHtml}
         </article>
-    `
-    mainContainer.innerHTML = mainHtml
-}
+    `;
+  mainContainer.innerHTML = mainHtml;
+};
 
-document.addEventListener("postingOrder", render)
-//you do need both of these "render"s because the one in the click event REgenerates the HTML after an order is made as well as posts the order 
+document.addEventListener("postingOrder", render);
+//you do need both of these "render"s because the one in the click event REgenerates the HTML after an order is made as well as posts the order
 // (does the refresh of page for you lowkey)
-render()
+render();
 //this second "render" is what generates the html for the page initially, without this one, the page won't load
