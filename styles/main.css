@@ -1,29 +1,33 @@
-.choices{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    text-align: justify;
+.choices {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: justify;
 }
-.choices__styles{
-    border: dashed darkcyan;
-    width: 250px;
-    height: 250px;
-    padding-left: 2%;
+.choices__styles {
+  border: dashed darkcyan;
+  width: 250px;
+  height: 250px;
+  padding-left: 2%;
 }
-.choices__sizes{
-    border: dashed darkcyan;
-    width: 250px;
-    height: 250px;
-    padding-left: 2%;
+.choices__sizes {
+  border: dashed darkcyan;
+  width: 250px;
+  height: 250px;
+  padding-left: 2%;
 }
-.choices__metals{
-    border: dashed darkcyan;
-    width: 250px;
-    height: 250px;
-    padding-left: 2%;
+.choices__metals {
+  border: dashed darkcyan;
+  width: 250px;
+  height: 250px;
+  padding-left: 2%;
 }
-#placeOrder{
-    background-color: red;
-    font-size: large;
-    margin-top: 4%;
+#placeOrder {
+  background-color: red;
+  font-size: large;
+  margin-top: 2%;
+}
+
+#jewelry {
+  margin-top: 2%;
 }
